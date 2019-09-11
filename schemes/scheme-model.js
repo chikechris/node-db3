@@ -25,5 +25,11 @@ function update (changes, id) {
     .update(changes)
 }
 
-module.exports = { find, findById, findSteps, add, update }
+function remove (id) {
+  return db('schemes')
+    .where({ id })
+    .del()
+}
+
+module.exports = { find, findById, findSteps, add, update, remove }
 
